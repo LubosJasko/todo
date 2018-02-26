@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
@@ -13,7 +13,6 @@ export class ConfigService {
     console.log(this.notesData);
   }
 
-
   getNote(): Observable<any> {
     return this.httpClient.get(this._APIurl, {responseType: 'json'});
   }
@@ -26,17 +25,6 @@ export class ConfigService {
         responseType: 'json'
       });
   }
-
-
-  // postNote(body?: string | '') {
-  //   this.httpClient.post<any>(this._APIurl, {title: body}, {observe: 'response'})
-  //     .subscribe((resp) => {
-  //         console.log('Post isSuccess: ' + resp.statusText);
-  //       },
-  //       (resp) => {
-  //         console.log(resp.error);
-  //       });
-  // }
 
   getNotes(id?: number) {
     this.httpClient.get<any>((this._APIurl + `/${id}`), {observe: 'response'})
@@ -75,10 +63,6 @@ export class ConfigService {
         (resp) => {
           console.log(resp.error);
         });
-
     this.notesData = this.getNote();
-
   }
-
-
 }

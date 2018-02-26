@@ -1,8 +1,7 @@
-import {Component, Input, Injectable, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Injectable, OnInit, Output} from '@angular/core';
 import {ConfigService} from '../../config/config.service';
-import {NotesService} from './notes.service';
-import {AppComponent} from '../../app.component';
 import {DetailComponent} from '../detail/detail.component';
+import {SharedService} from "../../config/noteData.service";
 
 @Injectable()
 @Component({
@@ -21,8 +20,8 @@ export class NotesComponent implements OnInit {
   };
   notes;
 
-
-  constructor(private configService: ConfigService) {
+  constructor(private configService: ConfigService,
+              private noteService: SharedService) {
   }
 
   ngOnInit() {
@@ -33,8 +32,7 @@ export class NotesComponent implements OnInit {
   }
 
   postNotes() {
-    this.configService.postNote();
-    this.loadData();
+    this.noteService.insertNote((this.notes.length + 1), null, true)
   }
 
   delete(id?: number) {
@@ -58,8 +56,7 @@ export class NotesComponent implements OnInit {
   }
 
   sendNote(id: number, title: string) {
-    this.actualNote.id = id;
-    this.actualNote.title = title;
+    this.noteService.insertNote(id, title);
     this.ngOnInit();
   }
 

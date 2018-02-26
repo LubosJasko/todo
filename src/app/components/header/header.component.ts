@@ -9,7 +9,6 @@ import {AppComponent} from '../../app.component';
 
 @Injectable()
 export class HeaderComponent implements OnInit {
-
   @Input() langData;
   @Input() defaultLang;
   @Output() changeLangData = new EventEmitter();
@@ -19,7 +18,6 @@ export class HeaderComponent implements OnInit {
   flag = this.appComponent.langData[this.appComponent.defaultLang].id;
 
   constructor(private appComponent: AppComponent) {
-
   }
 
   ngOnInit() {
@@ -28,7 +26,6 @@ export class HeaderComponent implements OnInit {
     this.flagLogo = './assets/img/' + (this.title) + '.png';
     this.welcome = this.appComponent.langData[this.appComponent.defaultLang].headerTitle;
   }
-
 
   switchLang() {
     this.changeLangData.emit();

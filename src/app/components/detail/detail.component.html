@@ -26,11 +26,12 @@
     </div>
     <div class="row justify-content-around pb-3">
   <span>
-      <button (click)="edit()">{{actualLang.edit}}</button>
+      <button [hidden]="editButton" (click)="edit()">{{actualLang.edit}}</button>
       <button [hidden]="saveButton" (click)="save()">{{actualLang.save}}</button>
+      <button [hidden]="newButton" (click)="newPost()">{{actualLang.new}} dave</button>
     </span>
       <span>
-      <button (click)="delete()">{{actualLang.delete}}</button>
+      <button [hidden]="deleteButton" (click)="delete()">{{actualLang.delete}}</button>
   </span>
     </div>
   </div>
