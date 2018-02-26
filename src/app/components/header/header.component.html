@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      {{ welcome }}
+    </div>
+    <div class="col-3 text-right" style="cursor: pointer"
+         (click)='switchLang()'>
+      <img [src]=flagLogo />
+      <span> ({{ title }}) </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="p-3">
+        <h1>{{actualLang.todos}}:</h1>
+      </div>
+      <div class="p-4">
+        <ul>
+          <li class="pb-2" style="cursor: pointer"
+              *ngFor="let note of notes"
+              (click)="sendNote(note.id, note.title)">{{note.title}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-around pb-3">
+  <span>
+      <button (click)="postNotes()">{{actualLang.new}}</button>
+    </span>
+      <span>
+      <button (click)="delete()">{{actualLang.deleteAll}}</button>
+  </span>
+    </div>
+  </div>
+</div>
+
+
+

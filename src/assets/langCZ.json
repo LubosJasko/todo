@@ -1,0 +1,22 @@
+{
+  "en": {
+    "Lang_Name_Cz": "en",
+    "headerTitle": "Welcome on Todos Page",
+    "todos": "Todos",
+    "detail": "Detail",
+    "new": "New Todos",
+    "deleteAll": "Delete All",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "cz": {
+    "Lang_Name_Cz": "cz",
+    "headerTitle": "Vitajte na stranke poznamok",
+    "todos": "Poznamky",
+    "detail": "Detaily",
+    "new": "Nova Poznamka",
+    "deleteAll": "Zmaž vše",
+    "delete": "Zmaž",
+    "edit": "Uprav"
+  }
+}

@@ -1,0 +1,37 @@
+<div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="p-3">
+        <h1>{{actualLang.detail}}:</h1>
+      </div>
+      <div class="p-4">
+        <form>
+          <div class="form-group">
+            <label class="center-block">{{actualLang.detail}}:
+              <input
+                #noteTitle
+                class="form-control"
+                formControlName="noteTitle"
+                value="{{actualNote.title}}"
+                [attr.disabled]="!IsTextBoxDisabled?'true':null"
+                (keyup)="onKey(noteTitle.value)"/>
+            </label>
+            <label class=" center-block">id:
+              <input class="form-control" formControlName="id" disabled value="{{actualNote.id}}">
+            </label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="row justify-content-around pb-3">
+  <span>
+      <button (click)="edit()">{{actualLang.edit}}</button>
+      <button [hidden]="saveButton" (click)="save()">{{actualLang.save}}</button>
+    </span>
+      <span>
+      <button (click)="delete()">{{actualLang.delete}}</button>
+  </span>
+    </div>
+  </div>
+</div>

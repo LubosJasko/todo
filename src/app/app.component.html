@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div style="border: 1px solid black">
+    <app-header (changeLangData)='changeLang($event)' class="container-fluid"></app-header>
+  </div>
+  <div style="border: 1px solid black" class="container-fluid">
+    <div class="row">
+      <div class="col-6 p-0">
+        <app-notes [actualLang]="actualLang" ></app-notes>
+      </div>
+      <div class="col-6 p-0">
+        <app-detail [actualLang]="actualLang"></app-detail>
+      </div>
+    </div>
+  </div>
+</div>
