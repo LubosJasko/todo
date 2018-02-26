@@ -1,4 +1,6 @@
 import { browser, by, element } from 'protractor';
+import {until} from "selenium-webdriver";
+import elementTextMatches = until.elementTextMatches;
 
 export class AppPage {
   navigateTo() {
@@ -6,6 +8,10 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('app-header div div div')).getText();
+  }
+
+  getFirstNoteText() {
+    return element(by.css('app-notes li')).getText();
   }
 }

@@ -9,6 +9,12 @@ describe('bsc App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Welcome on Todos Page');
   });
+
+  it('should display first note', () => {
+    page.navigateTo();
+    expect(page.getFirstNoteText()).toEqual('Jogging in park');
+  });
+
 });
